@@ -1,7 +1,6 @@
 import { signOut } from 'firebase/auth'
 import React, { useEffect, useState } from 'react'
 import { toast, ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
 import { auth } from '../firebase-config'
 import Auth from './componets/Auth'
 import JoinRoom from './componets/JoinRoom/JoinRoom'
