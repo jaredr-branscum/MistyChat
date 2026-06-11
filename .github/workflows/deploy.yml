@@ -33,6 +33,9 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
+      - name: Run Tests & Check Coverage
+        run: npm run test
+
       - name: Build Application
         # Inject Secrets/Variables into build process
         env:

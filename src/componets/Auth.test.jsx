@@ -46,8 +46,8 @@ describe('Auth Component', () => {
 
     it('should render the login prompt and login button', () => {
         render(<Auth setAuth={mockSetAuth} />)
-        expect(screen.getByText(/Please Add Your Account to Continue/i)).toBeInTheDocument()
-        expect(screen.getByRole('button', { name: /Login with google/i })).toBeInTheDocument()
+        expect(screen.getByRole('heading', { name: /MistyChat/i })).toBeInTheDocument()
+        expect(screen.getByRole('button', { name: /Sign in with Google/i })).toBeInTheDocument()
     })
 
     it('should set persistence and setAuth(true) on successful login', async () => {
@@ -57,7 +57,7 @@ describe('Auth Component', () => {
 
         render(<Auth setAuth={mockSetAuth} />)
 
-        const loginBtn = screen.getByRole('button', { name: /Login with google/i })
+        const loginBtn = screen.getByRole('button', { name: /Sign in with Google/i })
         fireEvent.click(loginBtn)
 
         await waitFor(() => {
@@ -74,7 +74,7 @@ describe('Auth Component', () => {
 
         render(<Auth setAuth={mockSetAuth} />)
 
-        const loginBtn = screen.getByRole('button', { name: /Login with google/i })
+        const loginBtn = screen.getByRole('button', { name: /Sign in with Google/i })
         fireEvent.click(loginBtn)
 
         await waitFor(() => {
@@ -89,7 +89,7 @@ describe('Auth Component', () => {
 
         render(<Auth setAuth={mockSetAuth} />)
 
-        const loginBtn = screen.getByRole('button', { name: /Login with google/i })
+        const loginBtn = screen.getByRole('button', { name: /Sign in with Google/i })
         fireEvent.click(loginBtn)
 
         await waitFor(() => {
