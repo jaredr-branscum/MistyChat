@@ -51,14 +51,36 @@ export default function Chat({ roomID, uid, logout, setRoomID }) {
     }, [messages])
 
     const handleLogout = async () => {
-        await deleteUserMessages()
+        let shouldDelete = true
+        try {
+            shouldDelete = window.confirm(
+                'Would you like to delete all of your messages from this chatroom before leaving?'
+            )
+        } catch (error) {
+            console.error('Error showing confirm dialog, defaulting to delete:', error)
+        }
+
+        if (shouldDelete) {
+            await deleteUserMessages()
+        }
         await logout()
     }
 
-    const joinAnotherRoom = () => {
+    const joinAnotherRoom = async () => {
+        let shouldDelete = true
+        try {
+            shouldDelete = window.confirm(
+                'Would you like to delete all of your messages from this chatroom before leaving?'
+            )
+        } catch (error) {
+            console.error('Error showing confirm dialog, defaulting to delete:', error)
+        }
+
+        if (shouldDelete) {
+            await deleteUserMessages()
+        }
         setRoomID(null)
         toast.success('Current room was logout')
-        deleteUserMessages()
     }
 
     const handleSendMessage = async (e) => {
@@ -144,7 +166,7 @@ export default function Chat({ roomID, uid, logout, setRoomID }) {
                     <div className="text-center border p-3 bg-green-100">
                         <h1>
                             This room has no messages; you can join any of your friends without any limits by using the
-                            room name (<span className="font-bold text-yellow-600">{roomID}</span> ) you created.
+                            room name (<span className="font-bold text-yellow-600">{roomID}</span> ) you created. Once you leave the room, all of your messages will be deleted from the chatroom.
                             <br />
                         </h1>
                     </div>
