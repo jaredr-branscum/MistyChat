@@ -2,6 +2,7 @@ import { browserLocalPersistence, setPersistence, signInWithPopup } from 'fireba
 import { toast } from 'react-toastify'
 import { auth, provider } from '../../firebase-config'
 import PropTypes from 'prop-types'
+import React from 'react'
 
 export default function Auth({ setAuth }) {
     const handleLogin = async () => {

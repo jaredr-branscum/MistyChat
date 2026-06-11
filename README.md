@@ -8,7 +8,7 @@ Real-time group chat application using React, Firebase for store data and real-t
 - **Room Creation**: Users can create and join unique rooms for chatting, each identified by a unique room ID.
 - **Real-time Messaging**: Messages are sent and received in real time using Firestore, ensuring instant communication.
 - **Message Storage**: All messages are stored in Firebase Firestore for persistence and retrieval.
-- **Message Deletion**: Whenever the user decides to join another room or signout, their message are removed from the chat room. Messages are deleted client-side, handling the logic on the server-side is on the TODO.
+- **Message Deletion**: Whenever the user decides to join another room or signout, their message are removed from the chat room.
 
 ## Main Project File Structure
 

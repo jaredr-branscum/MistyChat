@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import Chat from '../Chat/Chat'
 import Join from '../Chat/Join'
 import PropTypes from 'prop-types'
